@@ -4,7 +4,7 @@ import {
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import {useState} from 'react';
-import {View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from '../styles/styles';
 
 GoogleSignin.configure({
@@ -45,15 +45,17 @@ function SignInScreen({signIn}) {
   }
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.containerGoogle}
+      onPress={() => onGoogleButtonPress().then(user => signIn(user.user))}>
       <GoogleSigninButton
         style={styles.button}
-        size={GoogleSigninButton.Size.Wide}
+        size={GoogleSigninButton.Size.Icon}
         color={GoogleSigninButton.Color.Light}
-        onPress={() => onGoogleButtonPress().then(user => signIn(user.user))}
         disabled={isSigninInProgress}
       />
-    </View>
+      <Text style={styles.titulo}>Entrar com uma conta Google</Text>
+    </TouchableOpacity>
   );
 }
 
