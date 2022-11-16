@@ -26,6 +26,7 @@ const App = () => {
   };
 
   const signIn = data => {
+    console.log('------------------>', data);
     setState(prev => {
       return {...prev, userToken: data};
     });
@@ -47,7 +48,7 @@ const App = () => {
         ) : state.userToken == null ? (
           // Usuário não autenticado
           <Stack.Screen name="SignIn">
-            {props => <SignInScreen {...props} sigIn={signIn} />}
+            {props => <SignInScreen {...props} signIn={signIn} />}
           </Stack.Screen>
         ) : (
           // Usuário autenticado
