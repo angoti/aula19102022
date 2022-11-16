@@ -7,21 +7,30 @@ import {useState} from 'react';
 import {View} from 'react-native';
 import {styles} from '../styles/styles';
 
-export async function logOut() {
+GoogleSignin.configure({
+  webClientId:
+    '829208944695-43u8nvtkbtnufrm6pto7r7pk4do2u4a4.apps.googleusercontent.com',
+});
+
+export const logOut = async () => {
   try {
     await GoogleSignin.signOut();
   } catch (error) {
     console.error(error);
   }
-}
+};
+
+export const getCurrentUserInfo = async () => {
+  try {
+    const userInfo = await GoogleSignin.signInSilently();
+    return userInfo;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 function SignInScreen({signIn}) {
   const [isSigninInProgress, setIsSigninInProgress] = useState(false);
-
-  GoogleSignin.configure({
-    webClientId:
-      '829208944695-43u8nvtkbtnufrm6pto7r7pk4do2u4a4.apps.googleusercontent.com',
-  });
 
   async function onGoogleButtonPress() {
     setIsSigninInProgress(true);

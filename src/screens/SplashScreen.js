@@ -1,13 +1,15 @@
-import {Button, Text, View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import {styles} from '../styles/styles';
+import {getCurrentUserInfo} from './SignInScreen';
 
 const SplashScreen = ({loaded}) => {
+  getCurrentUserInfo().then(user => {
+    loaded(user);
+  });
+
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>SplashScreen</Text>
-      <Button title="token carregado" onPress={() => loaded('teste')} />
-      <View style={{marginBottom: 10}} />
-      <Button title="token não encontrado" onPress={() => loaded('')} />
+      <ActivityIndicator size="large" />
     </View>
   );
 };
