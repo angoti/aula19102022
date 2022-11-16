@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "829208944695",
+    "project_id": "aula-19-10-2022",
+    "storage_bucket": "aula-19-10-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829208944695:android:f6d4e47aca21bf36b15fb2",
+        "android_client_info": {
+          "package_name": "br.edu.iftm.saladeaula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829208944695-43u8nvtkbtnufrm6pto7r7pk4do2u4a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTHmuNXJ22ss64jwncVj7jGxefOuXBeTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829208944695-43u8nvtkbtnufrm6pto7r7pk4do2u4a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
